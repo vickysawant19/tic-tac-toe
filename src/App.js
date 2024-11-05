@@ -68,11 +68,8 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (result.x.length === 5 || result.o.length === 5) {
-      setIsComplete(true);
-      setWinner("It's Tie!");
-      return;
-    }
+    console.log(result.x.length, result.o.length);
+
     if (result.x.length < 2 || result.o.length < 2) return;
 
     let winnerX = checkWin(result.x);
@@ -83,6 +80,11 @@ export default function App() {
     } else if (winnerO) {
       setIsComplete(true);
       setWinner("O Won!");
+    }
+    // console.log(result, winnerX, winnerO);
+    if (result.x.length + result.o.length === 9 && !winnerX && !winnerO) {
+      setIsComplete(true);
+      setWinner("It's Tie!");
     }
   }, [result]);
 
