@@ -9,18 +9,27 @@
   box-shadow: 1px 1px 10px gray;
   border: 5px solid white;
   border-radius: 10px;
+  width: 50%; /* Default width for mobile */
+  aspect-ratio: 1;
 }
+
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
   border: 5px solid white;
   border-radius: 10px;
   font-size: 2rem;
+  aspect-ratio:1;
   background-color: lightblue;
   color: black;
+}
+
+/* Media Query for Desktop */
+@media (min-width: 768px) {
+  .box-container {
+    width: 30%; /* Set to 30% for larger screens */
+  }
 }
 
 .box:hover {
